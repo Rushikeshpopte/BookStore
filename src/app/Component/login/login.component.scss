@@ -1,0 +1,116 @@
+.container {
+    height: 768px;
+    background-color: gray;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.firstdiv {
+
+    width: 400px;
+    height: 390px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    opacity: 1;
+
+}
+
+#imgdiv {
+    width: 245px;
+    height: 245px;
+}
+
+#textdiv {
+
+    font-weight: bolder;
+    padding-top: 25px;
+    text-transform: uppercase;
+}
+
+#loginimg {
+    width: 245px;
+    height: 245px;
+    border-radius: 50%;
+}
+
+.seconddiv {
+    width: 390px;
+    height: 425px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 15px #00000029;
+    border: 1px solid #E4E4E4;
+    border-radius: 6px;
+    opacity: 1;
+}
+
+.seconddiv div {
+    padding-bottom: 10px;
+}
+
+
+mat-form-field {
+    width: 250px;
+}
+
+
+.lowerbtn {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#logsign {
+    display: flex;
+    flex-direction: row;
+}
+
+#logsign div {
+    padding: 20px 30px 0px 30px;
+    font-size: larger;
+    font-weight: 500;
+    font-family: roboto;
+    color: gray;
+}
+
+#logsign div :hover {
+    color: rgb(0, 0, 0);
+
+}
+
+#loginbtn {
+    width: 250px;
+    height: 37px;
+    background: #A03037 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#loginbtn button {
+    background: none;
+    border: none;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: grey;
+    font-size: larger;
+
+}
