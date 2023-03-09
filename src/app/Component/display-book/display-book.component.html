@@ -1,0 +1,15 @@
+<div class="article">
+    <div class="bookbox"  *ngFor="let book of bookArray">
+        <div class="imgbox">
+           <img src="../../../assets/Image 11.png" alt="">
+        </div>
+        <div class="contentbox">
+            <h5>{{book.bookName}}</h5>
+            <h6>{{book.author}}</h6>
+            <button style="background-color: green; color: white; border: none; font-weight: bold;" >4.5 <span style="font-size: 12px;" class="material-symbols-outlined">
+                star
+                </span></button>
+            <h5>Rs.{{book.discountPrice}}</h5>
+        </div>
+    </div>
+</div>

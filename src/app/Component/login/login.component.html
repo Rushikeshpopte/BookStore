@@ -1,42 +1,44 @@
-<div class="container">
+<form [formGroup]="signinForm" (ngSubmit)="onsubmit()">
 
-    <div class="firstdiv">
+    <div class="container">
+        
+        <div class="firstdiv">
         <div id="imgdiv">
             <img id="loginimg" src="../../../assets/component.png" alt="">
-
+            
         </div>
 
         <div id="textdiv">
             Online Book Shopping
         </div>
-
+        
     </div>
     <div class="seconddiv">
-
+        
         <div id="logsign">
             <div>
-            <a routerLink="/login">LOGIN</a>
-
+                <a routerLink="/login">LOGIN</a>
+                
                 
             </div>
             <div>
-              <a routerLink="/signup">SIGNUP</a> 
+                <a routerLink="/signup">SIGNUP</a> 
             </div>
         </div>
 
     <div>
       <p>Email Id:</p>
       <mat-form-field appearance="outline">
-        <input  matInput class="inputbox" type="text" placeholder="Enter email">
+        <input  matInput class="inputbox" type="text"  formControlName="email" placeholder="Enter email">
     </mat-form-field>
         <p>Password:</p>
         <mat-form-field appearance="outline">
-        <input matInput class="inputbox" type="password" placeholder="password">   
-    </mat-form-field>
+            <input matInput class="inputbox" type="password" formControlName="password" placeholder="password">   
+        </mat-form-field>
     </div>
-
+    
     <div id="loginbtn">
-        <button>Login</button>
+        <button (click)="onsubmit()">Login</button>
     </div>
     <div style="text-align: center; margin-top: 5px;">
         OR
@@ -48,9 +50,10 @@
         <div>
             <button mat-stroked-button>Google</button>
         </div>
-
+        
     </div>
-
-    </div>
+    
+</div>
 
 </div>
+</form>

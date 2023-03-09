@@ -11,6 +11,11 @@ import {MatButtonModule} from '@angular/material/button';
 import { HomeComponent } from './Component/home/home.component';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import { DisplayBookComponent } from './Component/display-book/display-book.component';
+import { GetAllBookComponent } from './Component/get-all-book/get-all-book.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthguardService } from './service/authguardService/authguard.service';
 
 
 
@@ -20,7 +25,9 @@ import {MatIconModule} from '@angular/material/icon';
     AppComponent,
     LoginComponent,
     SignupComponent,
-    HomeComponent
+    HomeComponent,
+    DisplayBookComponent,
+    GetAllBookComponent
   ],
   imports: [
     BrowserModule,
@@ -30,10 +37,12 @@ import {MatIconModule} from '@angular/material/icon';
     MatInputModule,
     MatButtonModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule,
+    HttpClientModule
     
   ],
-  providers: [],
+  providers: [AuthguardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
