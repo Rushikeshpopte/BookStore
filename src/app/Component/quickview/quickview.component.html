@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="leftbox">
+        <div id="imgbox">
+            <img src="../../../assets/Image 20.png" alt="" width="280px" height="365px">
+        </div>
+        <div class="cartbtn">
+            <button id="btn1">ADD To BAG</button>
+            <button id="btn2"> <span style="font-size: 13px;" class="material-symbols-outlined">
+                favorite
+                </span>
+                WISHLIST</button>
+
+        </div>
+
+    </div>
+    <div class="rightbox">
+
+        <div id="topcontent">
+            <h2>{{Book.bookName}}</h2>
+            <h3>{{Book.author}}</h3>
+            <button style="background-color: green; color: white; border: none; font-weight: bold; padding: 8px 12px;">4.5 <span style="font-size: 12px;" class="material-symbols-outlined">
+                star
+                </span></button>
+            <h2>Rs.{{Book.discountPrice}}</h2>
+        </div>
+        <div>
+            <h3>Book Detail</h3>
+            <p>
+                           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+            </p>
+ 
+        </div>
+        <div>
+            <div style="font-size: large; font-weight:500;">
+                Customer Feedback
+            </div>
+            <div>
+                <h5>Overall rating</h5>
+                <div>
+                    <img src="../../../assets/star.svg" alt="" width="25px">
+                    <img src="../../../assets/star.svg" alt="" width="25px">
+                    <img src="../../../assets/star.svg" alt="" width="25px">
+                    <img src="../../../assets/star.svg" alt="" width="25px">
+                    <img src="../../../assets/star.svg" alt="" width="25px">
+                   
+                </div>
+                <div id="submitbtn">
+                    <input type="text" placeholder="write your review" id="inputbox">
+                    <button mat-raised-button color="primary">Submit</button>
+                </div>
+
+            </div>
+        </div>
+         
+    </div>
+</div>

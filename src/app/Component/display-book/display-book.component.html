@@ -1,7 +1,8 @@
 <div class="article">
     <div class="bookbox"  *ngFor="let book of bookArray">
         <div class="imgbox">
-           <img src="../../../assets/Image 11.png" alt="">
+            <a (click)="openDetailsBook(book)"><img src="../../../assets/Image 11.png" alt=""></a>
+           
         </div>
         <div class="contentbox">
             <h5>{{book.bookName}}</h5>
@@ -10,6 +11,13 @@
                 star
                 </span></button>
             <h5>Rs.{{book.discountPrice}}</h5>
+        </div>
+        <div class="cartbtn">
+            <button id="btn1">ADD TO BAG</button>
+            <button id="btn2"> <span style="font-size: 13px;" class="material-symbols-outlined">
+                favorite
+                </span>
+                WISHLIST</button>
         </div>
     </div>
 </div>

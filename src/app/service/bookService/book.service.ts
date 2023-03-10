@@ -25,4 +25,19 @@ getAllbook(){
     httpOption
   )
   }
+
+  
+  getAllbookquickview(){
+    let httpOption={
+      headers : new HttpHeaders({
+        'content-type':'application/json',
+      
+      })
+    }
+    return this.httpService.GetService(
+      'bookstore_user/get/book',
+      false,
+      httpOption
+    )
+    }
 }

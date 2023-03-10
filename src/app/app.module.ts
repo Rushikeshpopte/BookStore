@@ -16,6 +16,8 @@ import { GetAllBookComponent } from './Component/get-all-book/get-all-book.compo
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthguardService } from './service/authguardService/authguard.service';
+import { QuickviewComponent } from './Component/quickview/quickview.component';
+import { CartComponent } from './Component/cart/cart.component';
 
 
 
@@ -27,7 +29,9 @@ import { AuthguardService } from './service/authguardService/authguard.service';
     SignupComponent,
     HomeComponent,
     DisplayBookComponent,
-    GetAllBookComponent
+    GetAllBookComponent,
+    QuickviewComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

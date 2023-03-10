@@ -1,7 +1,7 @@
 
 .bookbox {
     width: 235px;
-    height: 275px;
+    height: 310px;
     box-sizing: border-box;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000040;
@@ -53,4 +53,27 @@ h6 {
     display: flex;
     flex-wrap: wrap;
     padding: 100px;
+}
+
+.cartbtn{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#btn1{
+    background-color:#A03037;
+    color: #FFFFFF;
+    border: none;
+    padding:8px 20px;
+    font-size: 10px;
+}
+
+#btn2{
+    background-color: #333333;
+    color: #FFFFFF;
+    border: none;
+    padding: 6px 12px;
+    
+
 }
