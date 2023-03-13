@@ -1,7 +1,7 @@
 <p>cart works!</p>
 
 <div class="container">
-    <div class="firstdiv">
+    <div class="firstdiv" *ngFor="let book of cartbook">
         <div class="flexprop">
             <h3>My cart (1)</h3>
             <select name="" id="">
@@ -9,12 +9,12 @@
             </select>
 
         </div>
-        <div class="flexprop">
+        <div class="flexprop" >
             <div>
                 <img src="../../../assets/Image 12.png" alt="">
             </div>
             <div>
-                <h4>Don't Make Me Think</h4>
+                <h4>{{book.product_id.bookName}}</h4>
                 <h3>by Steve Krug</h3>
                 <h4>Rs. 1500</h4>
             </div>
