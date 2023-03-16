@@ -17,4 +17,10 @@ export class HttpService {
   GetService(url:string, token:boolean=false, httpOption:any){
     return this.httpClient.get(this.BaseUrl + url, token && httpOption)
   }
+  DeleteService(url:string, token:boolean=true, httpOption:any){
+    return this.httpClient.delete(this.BaseUrl + url, token && httpOption)
+  }
+  PutService(url:string, reqdata:any, token:boolean=true,  httpOption:any){
+    return this.httpClient.put(this.BaseUrl + url, reqdata, token && httpOption)
+  }
 }

@@ -18,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthguardService } from './service/authguardService/authguard.service';
 import { QuickviewComponent } from './Component/quickview/quickview.component';
 import { CartComponent } from './Component/cart/cart.component';
+import {MatRadioModule} from '@angular/material/radio';
+
 
 
 
@@ -43,7 +45,8 @@ import { CartComponent } from './Component/cart/cart.component';
     MatToolbarModule,
     MatIconModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatRadioModule
     
   ],
   providers: [AuthguardService],

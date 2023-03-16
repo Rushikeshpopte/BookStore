@@ -35,6 +35,29 @@ export class CartService {
      return this.httpService.GetService('bookstore_user/get_cart_items',true,header)
      
   }
+  removeItem(data:any){
+    let header ={
+      headers: new HttpHeaders({
+        'content-type':'application/json',
+        'x-access-token' : this.token
+      })
+    }
+    console.log('remove book from cart', this.token);
+    return this.httpService.DeleteService('bookstore_user/remove_cart_item/'+data._id,true,header)
+
+  }
+  customerdetails(data:any){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    console.log('details upload',this.token);
+    return this.httpService.PutService('bookstore_user/edit_user',data,true, header)
+    
+   
+   }
 
 
 }

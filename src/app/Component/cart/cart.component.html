@@ -2,50 +2,138 @@
 
 <div class="container">
     <div class="firstdiv" *ngFor="let book of cartbook">
-        <div class="flexprop">
-            <h3>My cart (1)</h3>
-            <select name="" id="">
+        <div class="flexprop flexspacebetween">
+            <h3 style="color: #0A0102;">My cart ({{cartbook.length}})</h3>
+            <select name="" id="selectbox">
                 <option value="">Use current location</option>
             </select>
 
         </div>
-        <div class="flexprop" >
+        <div class="flexprop seconddiv">
             <div>
                 <img src="../../../assets/Image 12.png" alt="">
             </div>
-            <div>
-                <h4>{{book.product_id.bookName}}</h4>
-                <h3>by Steve Krug</h3>
-                <h4>Rs. 1500</h4>
-            </div>
 
-        </div>
-        <div class="flexprop">
             <div>
+                <div>
+                    <h4>{{book.product_id.bookName}}</h4>
+                    <h3>{{book.product_id.author}}</h3>
+                    <span style="font-weight: bold;">Rs. {{book.product_id.discountPrice}}</span>&nbsp;&nbsp; <span
+                        style="text-decoration: line-through; font-size: 12px; color: gray;">Rs.
+                        {{book.product_id.price}} </span>
+                </div>
+                <div id="increment">
+                    <div>
+                        <span class="material-symbols-outlined">
+                            do_not_disturb_on
+                        </span>
+                        <input type="number" id="inputbox">
+                        <span class="material-symbols-outlined">
+                            add_circle
+                        </span>
+                    </div>
+                    <div (click)="deleteItem(book)" style="cursor: pointer;">
+                        Remove
+                    </div>
 
-                <span class="material-symbols-outlined">
-                    do_not_disturb_on
-                </span>
-                <input type="number">
-                <span class="material-symbols-outlined">
-                    add_circle
-                </span>
-            </div>
-            <div>
-                Remove
+                </div>
             </div>
         </div>
-        <div>
-            <button>PLACE ORDER</button>
-        </div>
-
+        
     </div>
-    <div class="firstdiv" style="height: 60px;">
+    <div class="flexend" *ngIf="placeorder">
+        <button mat-raised-button color="primary" (click)="addressDetails()">PLACE ORDER</button>
+    </div>
+    <div class="firstdiv" style="height: 60px;" *ngIf="adress">
         Address Details
 
     </div>
-    <div class="firstdiv" style="height: 60px;">
-        Order summery
+    <form [formGroup]="validateForm" (ngSubmit)="close()">
+    <div  class="orderdetails" *ngIf="!adress">
+        <div class="customer">
+            <div>
+                <span  class="containertext">Customer Details</span> 
+            </div>
+            <div>
+                <button id="addAdress">Add New Adress</button>
+
+            </div>
+        </div>
+
+        <div class="fullname">
+            <div>
+
+                <p>Full Name</p>
+                <mat-form-field class="firstmatbox" appearance="outline">
+                    <input matInput class="inputbox" type="text" formControlName="fullName" placeholder="">
+                    <mat-error>Enter your Full Name</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+
+                <p>Mobile Number</p>
+                <mat-form-field class="firstmatbox" appearance="outline">
+                    <input matInput class="inputbox" type="number" formControlName="mobile" placeholder="">
+                    <mat-error>Enter your Mobile Number</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="fullname">
+            <div>
+
+                <p>Address</p>
+                <mat-form-field class="secondmatbox" appearance="outline">
+                    <input matInput class="inputbox" type="text" formControlName="address" placeholder="">
+                    <mat-error>Enter your Address</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="fullname">
+            <div>
+
+                <p>City/town</p>
+                <mat-form-field appearance="outline" class="firstmatbox" >
+                    <input matInput class="inputbox" type="text" formControlName="city" placeholder="">
+                    <mat-error>Valid city</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                
+                <p>State</p>
+                <mat-form-field appearance="outline" class="firstmatbox" >
+                    <input matInput class="inputbox" type="text" formControlName="state" placeholder="">
+                    <mat-error>Valid state</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="radiobox">
+            <p>Type</p>
+            <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1">Home</mat-radio-button>
+                <mat-radio-button value="2">Work</mat-radio-button>
+                <mat-radio-button value="2">Other</mat-radio-button>
+              </mat-radio-group>
+              
+        </div>
+        <div style="display: flex; justify-content: end; margin-right: 20px;" *ngIf="continueshopping">
+            <button mat-raised-button color="primary" (click)="continue()"   (click)="close()">CONTINUE</button>
+
+        </div>
+    </div>
+</form>
+    <div class="firstdiv" style="height: 60px;" *ngIf="!ordersummery">
+        <span class="containertext">
+
+            Order summery
+        </span>
+
+        <div>
+
+        </div>
+        <div style="display: flex; justify-content: end; margin-right: 20px;">
+            <button mat-raised-button color="primary" (click)="continue()">CHECKOUT</button>
+
+        </div>
     </div>
 
 </div>
