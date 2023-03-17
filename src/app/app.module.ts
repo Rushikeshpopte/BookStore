@@ -19,7 +19,10 @@ import { AuthguardService } from './service/authguardService/authguard.service';
 import { QuickviewComponent } from './Component/quickview/quickview.component';
 import { CartComponent } from './Component/cart/cart.component';
 import {MatRadioModule} from '@angular/material/radio';
-
+import { OrdersummeryComponent } from './Component/ordersummery/ordersummery.component';
+import { WishlistComponent } from './Component/wishlist/wishlist.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -33,7 +36,9 @@ import {MatRadioModule} from '@angular/material/radio';
     DisplayBookComponent,
     GetAllBookComponent,
     QuickviewComponent,
-    CartComponent
+    CartComponent,
+    OrdersummeryComponent,
+    WishlistComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,9 @@ import {MatRadioModule} from '@angular/material/radio';
     MatIconModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatRadioModule
+    MatRadioModule,
+    NgxPaginationModule,
+    MatSelectModule
     
   ],
   providers: [AuthguardService],

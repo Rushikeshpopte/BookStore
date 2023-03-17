@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/service/cartService/cart.service';
 import { DataService } from 'src/app/service/dataService/data.service';
+import { WishlistService } from 'src/app/service/wishlistService/wishlist.service';
 
 @Component({
   selector: 'app-quickview',
@@ -10,7 +11,8 @@ import { DataService } from 'src/app/service/dataService/data.service';
 export class QuickviewComponent implements OnInit {
   Book: any;
   constructor(private dataService:DataService,
-    private cartService:CartService){}
+    private cartService:CartService,
+    private wishlist:WishlistService){}
 
 ngOnInit(){
 
@@ -34,6 +36,18 @@ addtoCart(){
     
   })
   
+}
+addwishlistBook(){
+  let data={
+    bookid:this.Book._id,
+
+  }
+  console.log('addtowishlist', data);
+  console.log(this.Book._id);
+  this.wishlist.addtoWishlist(data).subscribe((response:any)=>{
+    console.log('result sucess wishlist',response);
+  })
+
 }
 
 }

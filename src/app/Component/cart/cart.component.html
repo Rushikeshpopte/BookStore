@@ -16,7 +16,7 @@
 
             <div>
                 <div>
-                    <h4>{{book.product_id.bookName}}</h4>
+                    <h4>{{book.product_id.book}}</h4>
                     <h3>{{book.product_id.author}}</h3>
                     <span style="font-weight: bold;">Rs. {{book.product_id.discountPrice}}</span>&nbsp;&nbsp; <span
                         style="text-decoration: line-through; font-size: 12px; color: gray;">Rs.
@@ -131,7 +131,7 @@
 
         </div>
         <div style="display: flex; justify-content: end; margin-right: 20px;">
-            <button mat-raised-button color="primary" (click)="continue()">CHECKOUT</button>
+            <button mat-raised-button color="primary" (click)="continue()" routerLink="/home/order">CHECKOUT</button>
 
         </div>
     </div>

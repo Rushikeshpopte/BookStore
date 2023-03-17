@@ -52,7 +52,9 @@ h6 {
 .article {
     display: flex;
     flex-wrap: wrap;
-    padding: 100px;
+    // padding: 100px;
+    justify-content: center;
+    align-items: center;
 }
 
 .cartbtn{
@@ -77,4 +79,16 @@ h6 {
     font-size: 10px;
     
 
+}
+#pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.topcontent{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 120px;
+    padding-left: 120px;
+    padding: 30px 120px 0px 120px;
 }

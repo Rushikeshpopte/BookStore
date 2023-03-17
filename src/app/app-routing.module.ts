@@ -7,6 +7,8 @@ import { GetAllBookComponent } from './Component/get-all-book/get-all-book.compo
 import { AuthenticationGuard } from './authentication.guard';
 import { QuickviewComponent } from './Component/quickview/quickview.component';
 import { CartComponent } from './Component/cart/cart.component';
+import { OrdersummeryComponent } from './Component/ordersummery/ordersummery.component';
+import { WishlistComponent } from './Component/wishlist/wishlist.component';
 
 const routes:Routes = [
   {path: '', redirectTo:"/login", pathMatch:'full'},
@@ -15,7 +17,9 @@ const routes:Routes = [
   {path:'home', component:HomeComponent,canActivate:[AuthenticationGuard],
  children:[{path:'displaybook', component:GetAllBookComponent,},
  { path:'quickview', component:QuickviewComponent},
-{path:'cart', component:CartComponent}]},
+{path:'cart', component:CartComponent},
+{path: 'order', component:OrdersummeryComponent},
+{path: 'wishlist', component:WishlistComponent}]},
 
 ]
 
