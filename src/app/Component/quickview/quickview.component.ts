@@ -10,9 +10,16 @@ import { WishlistService } from 'src/app/service/wishlistService/wishlist.servic
 })
 export class QuickviewComponent implements OnInit {
   Book: any;
+  removecart:boolean=true;
+  showcount:boolean=false;
+  hideMatBadge : boolean=true;
+  badgeCounter: number=1;
   constructor(private dataService:DataService,
     private cartService:CartService,
-    private wishlist:WishlistService){}
+    private wishlist:WishlistService){
+      this.hideMatBadge = true;
+      this.badgeCounter = 1;
+    }
 
 ngOnInit(){
 
@@ -48,6 +55,22 @@ addwishlistBook(){
     console.log('result sucess wishlist',response);
   })
 
+}
+showcart(){
+  this.removecart=false;
+  this.showcount=true;
+}
+increment() {
+  this.badgeCounter++;
+  this.hideMatBadge = false;
+}
+decrement(){ 
+  if(this.badgeCounter < 0)
+   return;
+  this.badgeCounter--;
+  if(this.badgeCounter == 0){
+    this.hideMatBadge = true;
+  }
 }
 
 }

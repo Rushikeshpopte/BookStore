@@ -77,6 +77,41 @@ h3{
 
 }
 
+.subtract {
+    border-radius: 17px;
+    border: 0.5px solid rgb(176, 173, 173);
+    background: white;
+    height: 35px;
+    width: 35px;
+    font-size: 20px;
+    color: grey;
+}
+
+.add {
+    border-radius: 17px;
+    border: 0.5px solid rgb(176, 173, 173);
+    background: white;
+    height: 35px;
+    width: 35px;
+    font-size: 20px;
+    color: grey;
+}
+.numder {
+    height: 35px;
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: medium;
+    border: 1px solid gainsboro;
+}
+#quantity {
+    height: 35px;
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
 @media only screen and (max-width:600px){
 
     .container{

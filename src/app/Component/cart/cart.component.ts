@@ -15,10 +15,16 @@ export class CartComponent implements OnInit{
   continueshopping=true;
   ordersummery= true;
   validateForm !: FormGroup;
+  badgeCounter: number=1;
+  hideMatBadge : boolean=true;
   addressType:any[]=['Home','work','others']
+  address: any;
   constructor(
     private cartService:CartService,
-    private formBuilder:FormBuilder){}
+    private formBuilder:FormBuilder){
+      this.hideMatBadge = true;
+    this.badgeCounter = 1;
+    }
   ngOnInit() {
     this.getallbook()
     this.validateForm = this.formBuilder.group({
@@ -80,5 +86,19 @@ export class CartComponent implements OnInit{
     this.cartService.customerdetails(formdata).subscribe((result: any) => {
       console.log('details', result);
     })
+  }
+
+
+  increment() {
+    this.badgeCounter++;
+    this.hideMatBadge = false;
+  }
+  decrement(){ 
+    if(this.badgeCounter < 0)
+     return;
+    this.badgeCounter--;
+    if(this.badgeCounter == 0){
+      this.hideMatBadge = true;
+    }
   }
 }

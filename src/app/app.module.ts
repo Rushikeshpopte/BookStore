@@ -23,6 +23,11 @@ import { OrdersummeryComponent } from './Component/ordersummery/ordersummery.com
 import { WishlistComponent } from './Component/wishlist/wishlist.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import {MatSelectModule} from '@angular/material/select';
+import { PipefilterPipe } from './service/pipeService/pipefilter.pipe';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 
 
@@ -38,7 +43,10 @@ import {MatSelectModule} from '@angular/material/select';
     QuickviewComponent,
     CartComponent,
     OrdersummeryComponent,
-    WishlistComponent
+    WishlistComponent,
+    PipefilterPipe,
+  
+  
   ],
   imports: [
     BrowserModule,
@@ -53,7 +61,10 @@ import {MatSelectModule} from '@angular/material/select';
     HttpClientModule,
     MatRadioModule,
     NgxPaginationModule,
-    MatSelectModule
+    MatSelectModule,
+    MatMenuModule,
+    MatBadgeModule,
+    MatSnackBarModule
     
   ],
   providers: [AuthguardService],

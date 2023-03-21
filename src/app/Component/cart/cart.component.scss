@@ -49,6 +49,9 @@ padding: 20px 20px 0px 20px;
 }
 #increment{
     display: flex;
+    padding: 0%;
+    // justify-content: space-between;
+    // border: 2px solid red;
 }
 h3{
     color: #878787;;
@@ -103,4 +106,43 @@ h4{
 .radiobox{
     margin-left: 30px;
 
+}
+
+
+
+.subtract {
+    border-radius: 17px;
+    border: 0.5px solid rgb(176, 173, 173);
+    background: white;
+    height: 35px;
+    width: 35px;
+    font-size: 20px;
+    color: grey;
+}
+
+.add {
+    border-radius: 17px;
+    border: 0.5px solid rgb(176, 173, 173);
+    background: white;
+    height: 35px;
+    width: 35px;
+    font-size: 20px;
+    color: grey;
+}
+.numder {
+    height: 35px;
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: medium;
+    border: 1px solid gainsboro;
+}
+#quantity {
+    height: 35px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // border: 2px solid red;
 }

@@ -1,39 +1,59 @@
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <mat-toolbar>
-        <div class="logo">
-            <img src="../../../assets/book.png" alt="">
-            <span>Bookstore</span>
+    <div class="logo" routerLink="/home/displaybook">
+        <img src="../../../assets/book.png" alt="">
+        <span>Bookstore</span>
+    </div>
+    <div class="searchbar">
+        <input type="text" placeholder="Search..." (keyup)="searchBook($event)">
+        <img id="sicon" src="..//../../assets/search.svg" alt="">
+    </div>
+    <div class="profile">
+        <div [matMenuTriggerFor]="menu">
+            <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button> -->
+            <mat-menu #menu="matMenu">
+                <div mat-menu-item>
+                    <p id="wel">Welcome</p>
+                    <p class="acsess">To acsess account and manage orders</p>
+                 
+                </div>
+                <div mat-menu-item>
+                    <button id="addAdress" (click)="logOut()">LOGOUT</button>
+                </div>
+                <div mat-menu-item>
+                    <p class="acsess">My Order</p>  
+                </div>
+                <div mat-menu-item>
+                    <p class="acsess">Wishlist</p>
+                </div>
+                <!-- <button mat-menu-item>My Order</button>
+                <button mat-menu-item>Wishlist</button> -->
+            </mat-menu>
+
+            <!-- <img class="dimension" src="../../../assets/person.svg" alt=""> -->
+            <span class="material-symbols-outlined">
+                person
+            </span>
+            <span class="content">Profile</span>
         </div>
-        <div class="searchbar">
-            <input type="text" placeholder="Search...">
-            <img id="sicon" src="..//../../assets/search.svg" alt="">
-        </div>
-        <div class="profile">
-            <div>
-                <!-- <img class="dimension" src="../../../assets/person.svg" alt=""> -->
-                <span class="material-symbols-outlined">
-                    person
-                    </span>
-                <span class="content">Profile</span>
-            </div>
-            <a routerLink="/home/cart">
+        <a routerLink="/home/cart">
             <div>
                 <!-- <img class="dimension" src="../../../assets/cart.svg" alt="">   -->
-                
-                <span class="material-symbols-outlined">
+
+                <span class="material-symbols-outlined" matBadgeOverlap="false" [matBadge]="cartitemslist" style="color: white">
                     shopping_cart
-                    </span>
+                </span>
                 <span class="content">Cart</span>
-              
+
             </div>
         </a>
-            
-        </div>
-  </mat-toolbar>
+
+    </div>
+</mat-toolbar>
 
 
-  
 
 
-  <router-outlet></router-outlet>
-  
+
+<router-outlet></router-outlet>

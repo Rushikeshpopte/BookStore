@@ -16,21 +16,17 @@
 
             <div>
                 <div>
-                    <h4>{{book.product_id.book}}</h4>
+                    <h4>{{book.product_id.bookName}}</h4>
                     <h3>{{book.product_id.author}}</h3>
                     <span style="font-weight: bold;">Rs. {{book.product_id.discountPrice}}</span>&nbsp;&nbsp; <span
                         style="text-decoration: line-through; font-size: 12px; color: gray;">Rs.
                         {{book.product_id.price}} </span>
                 </div>
                 <div id="increment">
-                    <div>
-                        <span class="material-symbols-outlined">
-                            do_not_disturb_on
-                        </span>
-                        <input type="number" id="inputbox">
-                        <span class="material-symbols-outlined">
-                            add_circle
-                        </span>
+                    <div id="quantity">
+                        <button class="subtract"  (click)="decrement()">-</button>
+                        <span class="numder" >{{badgeCounter}}</span>
+                        <button class="add"(click)="increment()" >+</button>
                     </div>
                     <div (click)="deleteItem(book)" style="cursor: pointer;">
                         Remove

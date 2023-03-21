@@ -10,53 +10,64 @@ import { DataService } from 'src/app/service/dataService/data.service';
 })
 export class DisplayBookComponent implements OnInit {
 @Input()bookArray:any;
-p:number=1;
+p:number=0 ;
 itemsPerPage:number=5;
 totalProduct:any;
 booklist= [];
+// bookId: Number = 0;
+searchBook: string = '';
 constructor(private bookService:BookService,
   private dataService:DataService,
   private router:Router){}
   ngOnInit() {
-    this.bookService.getAllbook().subscribe((result:any)=>{
+    // this.bookService.getAllbook().subscribe((result:any)=>{
+    //   console.log('display book dataservice', result);
+    //   this.totalProduct=result.length;
+    //   this.booklist=result.result;
+    //   this.searchBook = result;
+    //   console.log('booklist is print',this.booklist);
+
+
+    // })
+    this.dataService.getAllBook.subscribe((result:any)=>{
       console.log('display book dataservice', result);
+      this.searchBook = result;
       this.totalProduct=result.length;
       this.booklist=result.result;
-      console.log('booklist is print',this.booklist);
-
     })
-
   }
    
 
-  // sortBookByPrice(option: any) {
-  //   if (option.value == 'low') {
-  //     this.booklist.sort((a: any, b: any) => a.book.discountPrice - b.book.discountPrice);
-  //     console.log('Books sorted by Price: Low to High')
-  //   }
-  //   else if (option.value == 'high') {
-  //     this.booklist.sort((a: any, b: any) => Number(b.book.discountPrice) - Number(a.discountPrice));
-  //     console.log('Books sorted by Price: High to Low')
-  //   }
-  //   else if (option.value == 'new') {
-  //     this.booklist.sort((a: any, b: any) => Number(a.bookId) - Number(b.bookId));
-  //     console.log('Books sorted by Sort by relevance')
-  //   }
-  //   console.log('hellow');
+  sortBookByPrice(option: any) {
+    if (option.value == 'Price: Low to High') {
+      // this.bookArray.sort((a: any, b: any) => Number(a.discountPrice) - Number(b.discountPrice));
+      this.bookArray.sort((a:any,b:any)=> a.discountPrice-b.discountPrice)
+      console.log('Books sorted by Price: Low to High')
+    }
+    else if (option.value == 'Price: High to Low') {
+      this.bookArray.sort((a: any, b: any) => Number(b.discountPrice) - Number(a.discountPrice));
+      console.log('Books sorted by Price: High to Low')
+    }
+    else if (option.value == 'Sort by relevance') {
+      this.bookArray.sort((a: any, b: any) => Number(a.bookId) - Number(b.bookId));
+      console.log('Books sorted by Sort by relevance')
+    }
+    else if (option.value == 'Newest Arrivals') {
+      this.bookArray.sort((a: any, b: any) => Number(b.bookId) - Number(a.bookId));
+      console.log('Books sorted by Newest Arrivals')
+    }
+  }
+  // lowtohigh() {
+  //   this.booklist = this.booklist.sort((low: any, high: any) => Number(low?.discountPrice) - Number(high?.discountPrice));
+  //   console.log('low value');
     
   // }
-
-  lowtohigh() {
-    this.booklist = this.booklist.sort((low: any, high: any) => Number(low?.discountPrice) - Number(high?.discountPrice));
-    console.log('low value');
-    
-  }
-  hightolow() {
-    this.booklist = this.booklist.sort((low: any, high: any) => high.discountPrice - low.discountPrice);
-  }
-  newestarrivals() {
-    this.booklist.reverse();
-  }
+  // hightolow() {
+  //   this.booklist = this.booklist.sort((low: any, high: any) => high.discountPrice - low.discountPrice);
+  // }
+  // newestarrivals() {
+  //   this.booklist.reverse();
+  // }
   
 
   openDetailsBook(data:any){

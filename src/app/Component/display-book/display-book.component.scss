@@ -56,7 +56,12 @@ h6 {
     justify-content: center;
     align-items: center;
 }
-
+.dropselect {
+    height: 5vh;
+    width: 13vw;
+    outline: none;
+    font-Size: 15px;
+}
 .cartbtn{
     display: flex;
     justify-content: space-between;

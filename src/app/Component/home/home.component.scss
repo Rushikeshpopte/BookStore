@@ -7,6 +7,7 @@ mat-toolbar {
 
 .logo {
     margin-left: 100px;
+    cursor: pointer;
 
 }
 
@@ -69,6 +70,7 @@ input::placeholder {
 
 .content {
     font-size: 15px;
+    cursor: pointer;
 
 }
 
@@ -134,4 +136,18 @@ h6 {
 a{
     text-decoration: none;
 
+}
+#addAdress{
+    padding: 7px 20px 7px 20px;
+    border:#A03037 2px solid;
+    background-color: #FFFFFF;
+    color: #A03037;
+}
+#wel{
+     font-size: small;
+     font-weight: bold;
+}
+.acsess{
+    font-size: small;
+    color: #878787;
 }
