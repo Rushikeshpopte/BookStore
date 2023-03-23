@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { WishlistService } from 'src/app/service/wishlistService/wishlist.service';
 
 @Component({
@@ -8,7 +9,8 @@ import { WishlistService } from 'src/app/service/wishlistService/wishlist.servic
 })
 export class WishlistComponent implements OnInit{
   wishList: any=[]
-  constructor( private wishlist:WishlistService){}
+  constructor( private wishlist:WishlistService,
+    private snackbar:MatSnackBar){}
   ngOnInit(){
     this.getwishlistBook()
     
@@ -27,9 +29,12 @@ export class WishlistComponent implements OnInit{
     this.wishlist.deletewishList(data).subscribe((response:any)=>{
       console.log('wishlist delete',response);
       console.log('book delete',data);
-
-      
     })
+    this.snackbar.open('wiahlist delete Sucessfully', '', {
+      duration: 3000,
+      verticalPosition: 'bottom',
+    });
+    this.getwishlistBook();
     
 
   }

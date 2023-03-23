@@ -11,7 +11,7 @@ import { DataService } from 'src/app/service/dataService/data.service';
 export class DisplayBookComponent implements OnInit {
 @Input()bookArray:any;
 p:number=0 ;
-itemsPerPage:number=5;
+itemsPerPage:number=8;
 totalProduct:any;
 booklist= [];
 // bookId: Number = 0;
@@ -33,7 +33,7 @@ constructor(private bookService:BookService,
       console.log('display book dataservice', result);
       this.searchBook = result;
       this.totalProduct=result.length;
-      this.booklist=result.result;
+        this.booklist=result.result;
     })
   }
    
@@ -53,26 +53,12 @@ constructor(private bookService:BookService,
       console.log('Books sorted by Sort by relevance')
     }
     else if (option.value == 'Newest Arrivals') {
-      this.bookArray.sort((a: any, b: any) => Number(b.bookId) - Number(a.bookId));
-      console.log('Books sorted by Newest Arrivals')
+      this.bookArray.reverse()
     }
   }
-  // lowtohigh() {
-  //   this.booklist = this.booklist.sort((low: any, high: any) => Number(low?.discountPrice) - Number(high?.discountPrice));
-  //   console.log('low value');
-    
-  // }
-  // hightolow() {
-  //   this.booklist = this.booklist.sort((low: any, high: any) => high.discountPrice - low.discountPrice);
-  // }
-  // newestarrivals() {
-  //   this.booklist.reverse();
-  // }
-  
-
   openDetailsBook(data:any){
     this.dataService.sendBookDetails(data);
-    this.router.navigateByUrl('/home/quickview')
+    this.router.navigateByUrl('/quickview')
     
   }
 

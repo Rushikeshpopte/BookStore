@@ -13,7 +13,7 @@ import { MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { DisplayBookComponent } from './Component/display-book/display-book.component';
 import { GetAllBookComponent } from './Component/get-all-book/get-all-book.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthguardService } from './service/authguardService/authguard.service';
 import { QuickviewComponent } from './Component/quickview/quickview.component';
@@ -64,7 +64,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatSelectModule,
     MatMenuModule,
     MatBadgeModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    FormsModule
     
   ],
   providers: [AuthguardService],

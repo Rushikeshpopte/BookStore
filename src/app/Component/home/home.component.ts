@@ -9,12 +9,11 @@ import { DataService } from 'src/app/service/dataService/data.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-
+@Input() cartitemslist:any;
   constructor(private router:Router, 
-    private dataService: DataService,
-    private cartService:CartService){}
+    private dataService: DataService,){}
 
-    cartitemslist:string='';
+    
 
   
   searchBook(event:any){
@@ -25,13 +24,6 @@ export class HomeComponent {
     localStorage.removeItem('token')
     this.router.navigateByUrl('/login')
   }
-  getcartDetails(){
-      this.cartService.getallbooks().subscribe((response:any)=>{
-        console.log("Retrived All Cart Items", response.data);
-        this.cartitemslist = response.data.length;
-        
-      })
 
-  }
 
 }

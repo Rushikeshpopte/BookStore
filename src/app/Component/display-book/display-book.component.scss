@@ -8,7 +8,7 @@
     border: 1px solid #E2E2E2;
     border-radius: 3px;
     opacity: 1;
-    margin: 20px;
+    margin: 25px;
 
 }
 
@@ -52,7 +52,7 @@ h6 {
 .article {
     display: flex;
     flex-wrap: wrap;
-    // padding: 100px;
+    padding: 25px 120px;
     justify-content: center;
     align-items: center;
 }
@@ -62,7 +62,7 @@ h6 {
     outline: none;
     font-Size: 15px;
 }
-.cartbtn{
+.cartbtn{   
     display: flex;
     justify-content: space-between;
     padding-left: 10px;

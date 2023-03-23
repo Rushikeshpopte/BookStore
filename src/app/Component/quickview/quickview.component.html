@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div>
+    <app-home [cartitemslist]="badgeCounter"></app-home>
+</div>
 <div class="container">
     <div class="leftbox">
         <div id="imgbox">
@@ -39,22 +43,47 @@
             <div style="font-size: large; font-weight:500;">
                 Customer Feedback
             </div>
-            <div>
-                <h5>Overall rating</h5>
-                <div>
-                    <img src="../../../assets/star.svg" alt="" width="25px">
-                    <img src="../../../assets/star.svg" alt="" width="25px">
-                    <img src="../../../assets/star.svg" alt="" width="25px">
-                    <img src="../../../assets/star.svg" alt="" width="25px">
-                    <img src="../../../assets/star.svg" alt="" width="25px">
+            <div class="feedbackcontain">
+                <div class="mainstar">
+                    <h5>Overall rating</h5>
+                    <div class="star-weight">
+
+                        <input type="radio" name="rate" id="rate1">
+                        <label for="rate1" class="fa fa-star"></label>
+                        <input type="radio"  name="rate" id="rate2">
+                        <label for="rate2" class="fas fa-star"></label>
+                        <input type="radio"  name="rate" id="rate3">
+                        <label for="rate3" class="fas fa-star"></label>
+                        <input type="radio"  name="rate" id="rate4">
+                        <label for="rate4" class="fas fa-star"></label>
+                        <input type="radio" name="rate" id="rate5">
+                        <label for="rate5"  class="fas fa-star" ></label>
+                      
+                    </div>
                    
                 </div>
                 <div id="submitbtn">
-                    <input type="text" placeholder="write your review" id="inputbox">
-                    <button mat-raised-button color="primary">Submit</button>
+                    <input type="text" placeholder="write your review" id="inputbox" [(ngModel)]="comments">
+                    <button mat-raised-button color="primary" (click)="addfeedbackAll()" >Submit</button>
                 </div>
 
             </div>
+        </div>
+        <div class="reviewbox" *ngFor="let feed of feedbackArray">
+            <div class="tagName">
+                <span class="roundtxt">NJ</span>
+                <span class="nametxt">{{feed.user_id.fullName}}</span>
+            </div>
+            <div class="yellow5star">
+                    <img src="../../../assets/star.svg" alt="" width="25px">
+                    <img src="../../../assets/star.svg" alt="" width="25px">
+                    <img src="../../../assets/star.svg" alt="" width="25px">
+                    <img src="../../../assets/star.svg" alt="" width="25px">
+                    <img src="../../../assets/star.svg" alt="" width="25px">
+            </div>
+            <div class="reviewTxt">
+                <span>{{feed?.comment}}</span>
+            </div>                
         </div>
          
     </div>

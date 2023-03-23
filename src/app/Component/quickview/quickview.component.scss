@@ -47,10 +47,11 @@
 }
 
 .rightbox {
-    margin-left: 100px;
-    margin-right: 250px;
-    margin-top: 50px;
+    // margin-left: 100px;
+    // margin-right: 250px;
+    // margin-top: 50px;
     // border: 2px solid red;
+    margin: 50px 250px 0px 100px;
     padding-right:20px ;
 }
 
@@ -58,6 +59,8 @@
     display: flex;
     flex-direction: column;
     align-items: end;
+    margin-right: 20px;
+    padding-bottom: 20px;
     gap:20px
 
 }
@@ -65,10 +68,14 @@ h3{
     color: gray;
 }
 #inputbox{
-    width:900px;
-    height: 40px;
+    width:650px;
+    height: 50px;
     
 }
+.feedbackcontain{
+    width:720px;
+    background-color:#F5F5F5;
+  }
 
 
 #topcontent h2,h3,button{
@@ -111,6 +118,99 @@ h3{
     display: flex;
     justify-content: space-between;
 }
+.reviewbox {
+    position: relative;
+    top: 15px;
+    height: 100px;
+    margin-bottom: 5px;
+  }
+  
+  .tagName {
+    display: flex;
+  }
+  
+  .roundtxt {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    background-Color: #F5F5F5;
+    border-Radius: 50%;
+    justify-Content: center;
+    align-Items: center;
+    color: #707070;
+    border: 1px solid #E4E4E4;
+  
+  }
+  
+  .nametxt {
+    display: flex;
+    position: relative;
+    top: 5px;
+    margin-left: 8px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+.yellow5star {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    width: 27%;
+    left: 36px;
+    bottom: 4px;
+  }
+
+  .yellowStar {
+    height: 15px;
+    width: 20px;
+  }
+
+  .whiteStar {
+    height: 11px;
+    width: 14px;
+    margin-left: 3px;
+  }
+
+  .reviewTxt {
+    position: relative;
+    top: 1px;
+  }
+
+ 
+
+  .mainstar{
+    width: 400px;
+    // background:#111;
+    padding: 10px 20px;
+    // border: 1px solid #444;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+  }
+  .mainstar .star-weight input{
+    display: none;
+  }
+  .star-weight label{
+    font-size: 20px;
+    color: #eae8e8;
+    padding: 10px;
+    float: right;
+    transition: all 0.2s ease;
+  }
+  input:not(:checked) ~label:hover,
+  input:not(:checked) ~label:hover ~ label
+  {
+    color: #fd4;
+  }
+  input:checked~label{
+    color: #fd4;
+  }
+  input#rate-1:checked~label{
+    color: #fe7;
+    text-shadow: 0 0 20px #952;
+  }
 
 @media only screen and (max-width:600px){
 

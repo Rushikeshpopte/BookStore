@@ -44,6 +44,13 @@ export class CartComponent implements OnInit{
       
     })
   }
+  deleteItem(Book:any) {
+    console.log(Book)
+    this.cartService.removeItem(Book).subscribe((res: any) => {
+      console.log(res)
+    })
+    this.getallbook();
+  }
 
 
   placOrder(){
@@ -61,13 +68,7 @@ export class CartComponent implements OnInit{
     // this.adress=true
   }
 
-  deleteItem(Book:any) {
-    console.log(Book)
-    this.cartService.removeItem(Book).subscribe((res: any) => {
-      console.log(res)
-      location.reload();
-    })
-  }
+  
   close(){
     this.continueshopping=false;
     this.ordersummery=false;

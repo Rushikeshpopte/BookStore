@@ -1,45 +1,29 @@
 <p>wishlist works!</p>
-
-
-
 <div class="container">
-
-
-<div>
-    My Wishlist
-</div>
-    <div class="firstdiv" *ngFor="let book of wishList">
-        <div class="flexprop flexspacebetween">
-            <h3 style="color: #0A0102;">My Wishlist ({{wishList.length}})</h3>
-            <select name="" id="selectbox">
-                <option value="">Use current location</option>
-            </select>
-    
-        </div>
-        <div class="flexprop seconddiv">
-            <div>
-                <img src="../../../assets/Image 12.png" alt="">
-            </div>
-    
-            <div>
-                <h4>{{book.product_id?.bookName}}</h4>
-                <h3>{{book.product_id?.author}}</h3>
-                <span style="font-weight: bold;">Rs. {{book.product_id?.discountPrice}}</span>&nbsp;&nbsp; <span
-                    style="text-decoration: line-through; font-size: 12px; color: gray;">Rs.
-                    {{book.product_id?.price}} </span>
-            </div>
-    
-        </div>
-        <div (click)="deletewishList(book)" style="cursor: pointer;">
-            Remove
-        </div>
-
-
-    
+    <div>
+        My Wishlist
     </div>
+    <div class="firstdiv">
+        <h3 style="color: #0A0102;">My Wishlist ({{wishList.length}})</h3>
+        <div class="seconddiv" *ngFor="let book of wishList">
+            <div class="thirddiv">
+                <div>
+                    <img src="../../../assets/Image 12.png" alt="">
+                </div>
+    
+                <div>
+                    <h4>{{book.product_id?.bookName}}</h4>
+                    <h3>{{book.product_id?.author}}</h3>
+                    <span style="font-weight: bold;">Rs. {{book.product_id?.discountPrice}}</span>&nbsp;&nbsp; <span
+                        style="text-decoration: line-through; font-size: 12px; color: gray;">Rs.
+                        {{book.product_id?.price}} </span>
+                </div>
+            </div>
 
+            <div (click)="deletewishList(book)" style="cursor: pointer;">
+                Remove
+            </div>
+        </div>
 
-
-
-
+    </div>
 </div>
