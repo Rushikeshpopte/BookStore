@@ -27,6 +27,8 @@ import { PipefilterPipe } from './service/pipeService/pipefilter.pipe';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { AdminDashboardComponent } from './Component/admin-dashboard/admin-dashboard.component';
+import { AdminloginComponent } from './Component/adminlogin/adminlogin.component';
 
 
 
@@ -45,6 +47,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     OrdersummeryComponent,
     WishlistComponent,
     PipefilterPipe,
+    AdminDashboardComponent,
+    AdminloginComponent,
   
   
   ],

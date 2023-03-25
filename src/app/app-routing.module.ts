@@ -9,15 +9,19 @@ import { QuickviewComponent } from './Component/quickview/quickview.component';
 import { CartComponent } from './Component/cart/cart.component';
 import { OrdersummeryComponent } from './Component/ordersummery/ordersummery.component';
 import { WishlistComponent } from './Component/wishlist/wishlist.component';
+import { AdminDashboardComponent } from './Component/admin-dashboard/admin-dashboard.component';
+import { AdminloginComponent } from './Component/adminlogin/adminlogin.component';
 
 const routes:Routes = [
   {path: '', redirectTo:"/login", pathMatch:'full'},
   {path: 'login', component:LoginComponent},
+  {path:'adminlogin', component:AdminloginComponent},
   {path:'signup', component:SignupComponent},
   {path: 'quickview', component:QuickviewComponent},
   {path:'home', component:HomeComponent,canActivate:[AuthenticationGuard],
  children:[{path:'displaybook', component:GetAllBookComponent,},
 {path:'cart', component:CartComponent},
+{path: 'adminDashboard', component:AdminDashboardComponent},
 {path: 'order', component:OrdersummeryComponent},
 {path: 'wishlist', component:WishlistComponent}]},
 

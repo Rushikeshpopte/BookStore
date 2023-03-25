@@ -1,22 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/service/userService/user.service';
+import { AdminService } from 'src/app/service/adminService/admin.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-adminlogin',
+  templateUrl: './adminlogin.component.html',
+  styleUrls: ['./adminlogin.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class AdminloginComponent {
   signinForm!: FormGroup;
   submitted = false;
 
   constructor(private formBuilder: FormBuilder,
-    private userService: UserService,
     private router:Router,
-    private snackbar:MatSnackBar) { }
+    private snackbar:MatSnackBar,
+    private adminService:AdminService) { }
   ngOnInit() {
     this.signinForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -35,13 +35,14 @@ export class LoginComponent implements OnInit {
         email: this.signinForm.value.email,
         password: this.signinForm.value.password,
       }
-
-      this.userService.login(data).subscribe((response: any) => {
-        console.log('login in successful', response);
-        localStorage.setItem('token',response.result.accessToken) 
-        this.router.navigateByUrl('/home/displaybook')
-
-      });     
+      this.adminService
+      .adminlogin(data).subscribe((response:any)=>{
+        console.log('admin login successful', response);
+        localStorage.setItem('token', response.result.accessToken)
+        this.router.navigateByUrl('/home/adminDashboard')
+        
+      })
+      
       this.snackbar.open('Login is Sucessfully', '', {
         duration: 3000,
         verticalPosition: 'bottom',
@@ -51,11 +52,13 @@ export class LoginComponent implements OnInit {
 
   }
   displaychangeuser(){
-  console.log('admin is log in');
-  this.router.navigateByUrl('/login')
-  }
-  displayadmin(){
-    this.router.navigateByUrl('/adminlogin')
-  }
+    console.log('admin is log in');
+    this.router.navigateByUrl('/login')
+    }
+    displayadmin(){
+      this.router.navigateByUrl('/adminlogin')
+    }
+  
+ 
 
 }
