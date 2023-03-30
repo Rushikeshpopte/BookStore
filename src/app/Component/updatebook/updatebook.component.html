@@ -1,0 +1,47 @@
+<h1 mat-dialog-title>ADD BOOK</h1>
+    <div mat-dialog-content class="addbook">
+        <div>
+            <div style="display: flex; gap: 20px;">
+                <div>
+                    <p>BookName</p>
+                    <mat-form-field appearance="outline">
+                        <input matInput [(ngModel)]="bookName">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <p>Author</p>
+                    <mat-form-field appearance="outline">
+                        <input matInput [(ngModel)]="author">
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+            <div style="display: flex; gap: 20px;">
+                <div>
+                    <p>DiscountPrice</p>
+                    <mat-form-field appearance="outline">
+                        <input matInput [(ngModel)]="discountPrice">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <p>Price</p>
+                    <mat-form-field appearance="outline">
+                        <input matInput [(ngModel)]="price">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <p>Quantity</p>
+            <mat-form-field appearance="outline">
+                <input matInput [(ngModel)]="quantity">
+            </mat-form-field>
+            
+
+            <div>
+                <button mat-button (click)="addAdminBook()">Submit</button>
+            </div>
+
+        </div>
+
+    </div>

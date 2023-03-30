@@ -38,8 +38,8 @@ export class AdminloginComponent {
       this.adminService
       .adminlogin(data).subscribe((response:any)=>{
         console.log('admin login successful', response);
-        localStorage.setItem('token', response.result.accessToken)
-        this.router.navigateByUrl('/home/adminDashboard')
+        localStorage.setItem('Admintoken', response.result.accessToken)
+        this.router.navigateByUrl('/adminDashboard')
         
       })
       

@@ -1,10 +1,11 @@
-<p>wishlist works!</p>
 <div class="container">
     <div>
-        My Wishlist
+       home/ My Wishlist
     </div>
     <div class="firstdiv">
-        <h3 style="color: #0A0102;">My Wishlist ({{wishList.length}})</h3>
+        <div id="wishlisthead">
+            My Wishlist ({{wishList.length}})
+        </div>
         <div class="seconddiv" *ngFor="let book of wishList">
             <div class="thirddiv">
                 <div>
@@ -20,8 +21,9 @@
                 </div>
             </div>
 
-            <div (click)="deletewishList(book)" style="cursor: pointer;">
-                Remove
+            <div (click)="deletewishList(book)" style="cursor: pointer;"><span class="material-symbols-outlined">
+                delete
+                </span>
             </div>
         </div>
 

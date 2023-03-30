@@ -1,7 +1,7 @@
-<p>admin-dashboard works!</p>
-<div>
+<app-home></app-home>
+<div class="tablecontiner">
 
-    <table>
+    <table class="tablecontent">
         <tr>
             <th>Book</th>
             <th>Book Name</th>
@@ -12,16 +12,18 @@
             <th>Update</th>
             <th>Delete</th>
         </tr>
-        <tr>
-            <td><img src="../../../assets/Image 13.png" alt=""></td>
-            <td>Two States</td>
-            <td>Jonh Wick</td>
-            <td>2500</td>
-            <td>4511</td>
-            <td>6</td>
-            <td><button>Update</button></td>
-            <td><button>Delete</button></td>
-
+        <tr style="text-align: center;" *ngFor="let admin of bookAdminArray">
+            <td><img src="../../../assets/Image 36.png" alt=""></td>
+            <td>{{admin.bookName}}</td>
+            <td>{{admin.author}}</td>
+            <td>{{admin.discountPrice}}</td>
+            <td>{{admin.price}}</td>
+            <td>{{admin.quantity}}</td>
+            <td><button mat-stroked-button color="primary">Update</button></td>
+            <td><button mat-stroked-button color="primary">Delete</button></td>
         </tr>
     </table>
 </div>
+    <div id="dialogbtn">
+        <button mat-stroked-button color="warn" (click)="openDialog('')">Add Book</button>
+    </div>

@@ -1,18 +1,32 @@
+#wishlisthead{
+    background-color: #F5F5F5;
+    width:70%;
+    margin-bottom: 5px;
+    padding: 15px 10px 15px 10px ;
+    border: 1px solid #E4E4E4;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-size: 15px;
+}
 .firstdiv{
     width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: aqua;
+    background-color:#FFFFFF;
     margin-left: 15%;
 }
 .seconddiv{
     display: flex;
     width: 70%;
+    box-sizing: border-box;
     justify-content: space-between;
+    border: 1px solid #E4E4E4;
+    padding: 20px 30px;
 }
 .thirddiv{
     display: flex;
+    gap:30px
 
 }

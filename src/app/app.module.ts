@@ -29,6 +29,8 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { AdminDashboardComponent } from './Component/admin-dashboard/admin-dashboard.component';
 import { AdminloginComponent } from './Component/adminlogin/adminlogin.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { UpdatebookComponent } from './Component/updatebook/updatebook.component';
 
 
 
@@ -49,8 +51,7 @@ import { AdminloginComponent } from './Component/adminlogin/adminlogin.component
     PipefilterPipe,
     AdminDashboardComponent,
     AdminloginComponent,
-  
-  
+    UpdatebookComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,7 +70,8 @@ import { AdminloginComponent } from './Component/adminlogin/adminlogin.component
     MatMenuModule,
     MatBadgeModule,
     MatSnackBarModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
     
   ],
   providers: [AuthguardService],

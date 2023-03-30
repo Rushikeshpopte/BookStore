@@ -16,12 +16,12 @@ const routes:Routes = [
   {path: '', redirectTo:"/login", pathMatch:'full'},
   {path: 'login', component:LoginComponent},
   {path:'adminlogin', component:AdminloginComponent},
+  {path: 'adminDashboard', component:AdminDashboardComponent},
   {path:'signup', component:SignupComponent},
   {path: 'quickview', component:QuickviewComponent},
   {path:'home', component:HomeComponent,canActivate:[AuthenticationGuard],
  children:[{path:'displaybook', component:GetAllBookComponent,},
 {path:'cart', component:CartComponent},
-{path: 'adminDashboard', component:AdminDashboardComponent},
 {path: 'order', component:OrdersummeryComponent},
 {path: 'wishlist', component:WishlistComponent}]},
 
